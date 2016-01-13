@@ -1,35 +1,86 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Socket.IO chat</title>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
-    </style>
-  </head>
-  <body>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-      var socket = io();
-      $('form').submit(function(){
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
-      });
-      socket.on('chat message', function(msg){
-        $('#messages').append($('<li>').text(msg));
-      });
-    </script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Connect-Four</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Implementation of a connect-four game">
+    <style type="text/css"></style>
+</head>
+<body>
+<div id="game">
+    <strong>Connect-four</strong><br/>
+    <span id="welcome-text"></span>
+
+    <table>
+        <tbody>
+
+        <tr>
+            <td id="cell00" class=""></td>
+            <td id="cell01" class=""></td>
+            <td id="cell02" class=""></td>
+            <td id="cell03" class=""></td>
+            <td id="cell04" class=""></td>
+            <td id="cell05" class=""></td>
+            <td id="cell06" class=""></td>
+        </tr>
+        <tr>
+            <td id="cell10" class=""></td>
+            <td id="cell11" class=""></td>
+            <td id="cell12" class=""></td>
+            <td id="cell13" class=""></td>
+            <td id="cell14" class=""></td>
+            <td id="cell15" class=""></td>
+            <td id="cell16" class=""></td>
+        </tr>
+        <tr>
+            <td id="cell20" class=""></td>
+            <td id="cell21" class=""></td>
+            <td id="cell22" class=""></td>
+            <td id="cell23" class=""></td>
+            <td id="cell24" class=""></td>
+            <td id="cell25" class=""></td>
+            <td id="cell26" class=""></td>
+        </tr>
+        <tr>
+            <td id="cell30" class=""></td>
+            <td id="cell31" class=""></td>
+            <td id="cell32" class=""></td>
+            <td id="cell33" class=""></td>
+            <td id="cell34" class=""></td>
+            <td id="cell35" class=""></td>
+            <td id="cell36" class=""></td>
+        </tr>
+        <tr>
+            <td id="cell40" class=""></td>
+            <td id="cell41" class=""></td>
+            <td id="cell42" class=""></td>
+            <td id="cell43" class=""></td>
+            <td id="cell44" class=""></td>
+            <td id="cell45" class=""></td>
+            <td id="cell46" class=""></td>
+        </tr>
+        <tr>
+            <td id="cell50" class=""></td>
+            <td id="cell51" class=""></td>
+            <td id="cell52" class=""></td>
+            <td id="cell53" class=""></td>
+            <td id="cell54" class=""></td>
+            <td id="cell55" class=""></td>
+            <td id="cell56" class=""></td>
+        </tr>
+
+        </tbody></table>
+    <br/><br/>
+    <button id="restart" onclick="restart()">RESTART</button>
+
+
+</div>
+
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="controller.js"></script>
+
+
+</body></html>

@@ -1,7 +1,7 @@
 {
-  "name": "socket-chat-example",
-  "version": "0.0.1",
-  "description": "my first socket.io app",
+  "name": "connect4 online",
+  "version": "0.0.2",
+  "description": "play a game of connect-four against your friends online",
   "dependencies": {
     "express": "4.10.2",
     "socket.io": "1.2.0"
